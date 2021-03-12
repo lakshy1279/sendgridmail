@@ -8,7 +8,7 @@ const API_KEY1 =
   "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";
 sgMail.setApiKey(API_KEY1);
 const router = express.Router();
-router.post("/send", (req, res) => {
+router.get("/", (req, res) => {
   const pathToAttachment = `${__dirname}/attachment.pdf`;
   const attachment = fs.readFileSync(pathToAttachment).toString("base64");
   const errorEmails = [];
@@ -64,28 +64,6 @@ router.post("/send", (req, res) => {
     .catch((error) => {
       console.log(error);
     });
-  // async.parallel(
-  //   [
-  //     function (callback) {
-  //       sendEmail(
-  //         callback,
-  //         "luckyron1279@gmail.com",
-  //         ["pachory1997@gmail.com"],
-  //         "sendgrid",
-  //         "hello",
-  //         '<p style="font-size: 32px;">HTML Content</p>'
-  //       );
-  //     },
-  //   ],
-  //   function (err, results) {
-  //     res.send({
-  //       success: true,
-  //       message: "Emails sent",
-  //       successfulEmails: results[0].successfulEmails,
-  //       errorEmails: results[0].errorEmails,
-  //     });
-  //   }
-  // );
 });
 // router.use("/v2", require("./v2"));
 module.exports = router;
