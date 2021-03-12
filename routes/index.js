@@ -1,6 +1,5 @@
 const express = require("express");
 var sgMail = require("@sendgrid/mail");
-var helper = require("sendgrid").mail;
 const fs = require("fs");
 const path = require("path");
 const async = require("async");
