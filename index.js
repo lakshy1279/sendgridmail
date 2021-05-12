@@ -12,8 +12,7 @@ app.use(express.json());
 app.use(cors());
 //for substitution
 sgMail.setSubstitutionWrappers("{", "}");
-const API_KEY1 =
-  "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";
+const API_KEY1 = process.env.sendGrid_API_Key;
 sgMail.setApiKey(API_KEY1);
 sgClient.setApiKey(API_KEY1);
 //funtion to retrieve email which not sent successfully
