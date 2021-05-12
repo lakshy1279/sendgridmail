@@ -1,0 +1,43 @@
+Sample Input1:
+{
+    "attachements":[{"filename":"logo.png","path":"/attachement/Logo.png"}],
+    "Data":[{"type":"to",
+    "email":"luckyron1279@gmail.com","name":"lakshy","status":"passed"},{"type":"to",
+    "email":"mayank@gmail.com","name":"nonu","status":"failed"}],
+    "content":"Hi  {name}, <b>Your result is {status}.</b>"
+}
+
+Sample Output1:
+{
+    "status": 200,
+    "message": "WARNING: Since SendGrid's API is Asynchronus in nature, so list of success and failure emails may not be accurate",
+    "data": {
+        "success": [
+            "luckyron1279@gmail.com",
+            "mayank@gmail.com"
+        ],
+        "failure": []
+    }
+}
+
+Sample Input2:
+{
+    "attachements":[{"filename":"operatingsystem.png","path":"/attachement/operatingsystem.pdf"}],
+    "Data":[{"type":"cc",
+    "email":"harivendrakumarsharma1845@gmail.com","name":"harivendra","subject":"operating system"},{"type":"to",
+    "email":"mayanksinghboss@gmail.com","name":"mayank","subject":"operating system"}],
+    "content":"Hello {name} here is your notes of {subject}"
+}
+
+Sample Output2:
+{
+    "status": 200,
+    "message": "WARNING: Since SendGrid's API is Asynchronus in nature, so list of success and failure emails may not be accurate",
+    "data": {
+        "success": [
+            "harivendrakumarsharma1845@gmail.com",
+            "mayanksinghboss@gmail.com"
+        ],
+        "failure": []
+    }
+}
